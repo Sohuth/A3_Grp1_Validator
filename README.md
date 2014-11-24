@@ -4,9 +4,6 @@
 
 This library is a work in progress.
 
-## Code Example
-
-
 ## Installation
 
 ### Clone repository
@@ -25,8 +22,16 @@ composer update
 
 ???profit
 
-## Contributors
+## Code Example
 
+In the index.php file, enter the values you need to test then do a var_dump(); of the method you want.
+
+Example:
+
+$valueExists = \Validator\ArrayV\ArrayValidator::valueExists($array, '270');
+var_dump($valueExists);
+
+It will return : boolean true.
 
 ## Copyright and license
 
