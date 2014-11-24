@@ -30,4 +30,4 @@ composer update
 
 ## Copyright and license
 
-Code and documentation copyright 2011-2014 Sohuth. Code released under [the MIT license](LICENSE). Docs released under [Creative Commons](docs/LICENSE).
+Code and documentation by Sohuth. This library is OpenSource.
