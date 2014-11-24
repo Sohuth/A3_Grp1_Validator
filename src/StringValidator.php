@@ -22,7 +22,7 @@ class StringValidator
      */
     public static function lengthEqual($string, $length){
         if(!is_string($string) || !is_int($length)){
-            throw new \Exception('Parameter must be in correct format');
+            throw new \Exception('This parameter needs to be a string or int');
         }
         if(mb_strlen($string) == $length){
             return true;
@@ -43,7 +43,7 @@ class StringValidator
      */
     public static function lengthBetween($string, $lengthMin, $lengthMax){
         if(!is_string($string) || !is_int($lengthMin) || !is_int($lengthMax)){
-            throw new \Exception('Parameter must be in correct format');
+            throw new \Exception('This parameter needs to be a string or int');
         }
         if(mb_strlen($string) >= $lengthMin && mb_strlen($string) <= $lengthMax){
             return true;
@@ -63,7 +63,7 @@ class StringValidator
      */
     public static function lengthSuperior($string, $length){
         if(!is_string($string) || !is_int($length)){
-            throw new \Exception('Parameter must be in correct format');
+            throw new \Exception('This parameter needs to be a string or int');
         }
         if(mb_strlen($string) >= $length){
             return true;
@@ -83,7 +83,7 @@ class StringValidator
      */
     public static function lengthInferior($string, $length){
         if(!is_string($string) || !is_int($length)){
-            throw new \Exception('Parameter must be in correct format');
+            throw new \Exception('This parameter needs to be a string');
         }
         if(mb_strlen($string) <= $length){
             return true;
@@ -102,10 +102,10 @@ class StringValidator
      */
     public static function noWhiteSpaceBeginningEnd($string){
         if(!is_string($string)){
-            throw new \Exception('Parameter must be in correct format');
+            throw new \Exception('This parameter needs to be a string');
         }
-        $noWhiteSpace = trim($string);
-        if(preg_match("/^\s/",$noWhiteSpace) == 0 && preg_match("/\s$/",$noWhiteSpace) == 0){
+        $stringNoSpace = trim($string);
+        if(preg_match(" ",$stringNoSpace) == 0 && preg_match(" ",$stringNoSpace) == 0){
             return true;
         }
         else{
@@ -122,10 +122,10 @@ class StringValidator
      */
     public static function noWhiteSpace($string){
         if(!is_string($string)){
-            throw new \Exception('Parameter must be in correct format');
+            throw new \Exception('This parameter needs to be a string');
         }
-        $noWhiteSpace = explode(" ",$string);
-        if(preg_match("/\s/",implode($noWhiteSpace)) == 0){
+        $stringNoSpace = explode(" ",$string);
+        if(preg_match(" ",implode($stringNoSpace)) == 0){
             return true;
         }
         else{

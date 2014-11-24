@@ -12,6 +12,12 @@ namespace Validator\ArrayV;
  */
 class ArrayValidator
 {
+    const LENGTH_EQUAL = 1;
+    const LENGTH_INFERIOR = 2;
+    const LENGTH_SUPERIOR = 3;
+    const LENGTH_INFERIOR_OR_EQUAL = 4;
+    const LENGTH_SUPERIOR_OR_EQUAL = 5;
+
     /**
      * @param array $array
      *
@@ -22,7 +28,7 @@ class ArrayValidator
     public static function isEmpty($array)
     {
         if(!is_array($array)){
-            throw new \Exception('This parameter must be an array');
+            throw new \Exception('This parameter needs to be an array');
         }
         if(count($array) == 0){
             return true;
@@ -34,91 +40,61 @@ class ArrayValidator
 
     /**
      * @param array $array
-     *
-     * @param int $number
-     *
-     * @return bool
-     *
-     * @throws \Exception
-     */
-    public static function numberElementsEquals($array, $number = 10)
-    {
-
-    }
-
-    /**
-     * @param array $array
-     *
-     * @param int $number
+     * @param $operator
+     * @param int $integer
      *
      * @return bool
      *
      * @throws \Exception
      */
-    public static function numberElementsSuperior($array, $number = 10)
+    public static function arrayComparator($array, $operator, $integer)
     {
-
-    }
-
-    /**
-     * @param array $array
-     *
-     * @param int $number
-     *
-     * @return bool
-     *
-     * @throws \Exception
-     */
-    public static function numberElementsSuperiorOrEqual($array, $number = 10)
-    {
-
-    }
-
-    /**
-     * @param array $array
-     *
-     * @param int $number
-     *
-     * @return bool
-     *
-     * @throws \Exception
-     */
-    public static function numberElementsInferior($array, $number = 10)
-    {
-
-    }
-
-    /**
-     * @param array $array
-     *
-     * @param int $number
-     *
-     * @return bool
-     *
-     * @throws \Exception
-     */
-    public static function numberElementsInferiorOrEqual($array, $number = 10)
-    {
-
-    }
-
-    /**
-     * @param array $array
-     *
-     * @param int $min
-     *
-     * @param int $max
-     *
-     * @return bool
-     *
-     * @throws \Exception
-     */
-    public static function numberElementsBetween($array,$min = 0, $max = 10)
-    {
-        if(!is_array($array) || !is_int($min) || !is_int($max)){
-            throw new \Exception('Parameter must be in the correct type');
+        if (!is_array($array) || !is_int($integer))
+            throw new \Exception('Invalid format');
+        if (!in_array($operator, [
+            self::LENGTH_EQUAL,
+            self::LENGTH_INFERIOR,
+            self::LENGTH_SUPERIOR,
+            self::LENGTH_SUPERIOR_OR_EQUAL,
+            self::LENGTH_INFERIOR_OR_EQUAL,
+        ])
+        ) {
+            throw new \Exception('The second parameter needs to be a valid operator');
         }
-        if(count($array) >= $min && count($array) <= $max){
+        $arrayLength = count($array);
+        switch ($operator) {
+            case self::LENGTH_EQUAL:
+                return $arrayLength === $integer;
+            case self::LENGTH_INFERIOR:
+                return $arrayLength < $integer;
+            case self::LENGTH_SUPERIOR:
+                return $arrayLength > $integer;
+            case self::LENGTH_INFERIOR_OR_EQUAL:
+                return $arrayLength <= $integer;
+            case self::LENGTH_SUPERIOR_OR_EQUAL:
+                return $arrayLength >= $integer;
+        }
+
+        return $operator;
+    }
+
+    /**
+     * @param array $array
+     *
+     * @param int $a
+     *
+     * @param int $b
+     *
+     * @return bool
+     *
+     * @throws \Exception
+     */
+    public static function numberElementsBetween($array,$a, $b)
+    {
+        if(!is_array($array) || !is_int($a) || !is_int($b)){
+            throw new \Exception('These parameters need to be an array or int');
+        }
+        if(count($array) >= $a && count($array) <= $b){
             return true;
         }
         else{
@@ -138,7 +114,7 @@ class ArrayValidator
     public static function keyExists($array, $key)
     {
         if(!is_array($array) || !is_string($key)){
-            throw new \Exception('Parameter must be in the correct type');
+            throw new \Exception('These parameters need to be an array and key');
         }
         $arrayKey = array_key_exists($key, $array);
         return $arrayKey;
@@ -156,7 +132,7 @@ class ArrayValidator
     public static function valueExists($array, $value)
     {
         if(!is_array($array) || !is_string($value)){
-            throw new \Exception('Parameter must be in the correct type');
+            throw new \Exception('These parameters need to be an array and value');
         }
         $valueExist = in_array($value, $array);
         return $valueExist;
