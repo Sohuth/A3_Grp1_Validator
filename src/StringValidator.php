@@ -105,7 +105,7 @@ class StringValidator
             throw new \Exception('This parameter needs to be a string');
         }
         $stringNoSpace = trim($string);
-        if(preg_match(" ",$stringNoSpace) == 0 && preg_match(" ",$stringNoSpace) == 0){
+        if(preg_match("/^\s/",$stringNoSpace) == 0 && preg_match("/^\s/",$stringNoSpace) == 0){
             return true;
         }
         else{
@@ -125,7 +125,7 @@ class StringValidator
             throw new \Exception('This parameter needs to be a string');
         }
         $stringNoSpace = explode(" ",$string);
-        if(preg_match(" ",implode($stringNoSpace)) == 0){
+        if(preg_match("/^\s/",implode($stringNoSpace)) == 0){
             return true;
         }
         else{
