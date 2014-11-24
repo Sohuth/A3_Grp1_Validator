@@ -1,4 +1,4 @@
-## SohuthValidator
+# SohuthValidator
 
 [BADGES COMES HERE]
 
@@ -9,11 +9,11 @@ This library is a work in progress.
 
 ## Installation
 
-# Clone repository
+### Clone repository
 
 git clone ...
 
-#Install dependencies
+###Install dependencies
 
 composer update --prefer-dist -o
 
@@ -21,7 +21,7 @@ or
 
 composer update
 
-#Use it!
+###Use it!
 
 ???profit
 
