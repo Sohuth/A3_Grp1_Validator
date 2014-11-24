@@ -13,20 +13,19 @@ namespace Validator\DateTimeV;
 class DateTimeValidator
 {
     /**
-     * @param \DateTime $birth
+     * @param \DateTime $date
      *
      * @return bool
      *
      */
-    public static function isMajor($birth)
+    public static function isMajor(\DateTime $date)
     {
         $dateNow = new \DateTime();
-        $diffBetween = $birth->diff($dateNow);
-
-        if($diffBetween->y >= 18){
+        $a = $date->diff($dateNow);
+        if($a->y >= 18){
             return true;
         }
-        else {
+        else{
             return false;
         }
     }
@@ -39,7 +38,7 @@ class DateTimeValidator
      *
      * @throws \Exception
      */
-    public static function isYear($date, $year)
+    public static function isYear(\DateTime $date, $year)
     {
         if(!is_int($year)){
             throw new \Exception('This parameter needs to be int');

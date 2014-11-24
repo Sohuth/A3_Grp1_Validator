@@ -38,7 +38,8 @@ $numberElementsBetween = \Validator\ArrayV\ArrayValidator::numberElementsBetween
 $keyExists = \Validator\ArrayV\ArrayValidator::keyExists($array, 'test');
 $valueExists = \Validator\ArrayV\ArrayValidator::valueExists($array, '270');
 
+$date = new DateTime('08/07/1994 00:00:00');
 $isMajor = \Validator\DateTimeV\DateTimeValidator::isMajor($date);
-$isYear = \Validator\DateTimeV\DateTimeValidator::isYear($year, 14);
+$isYear = \Validator\DateTimeV\DateTimeValidator::isYear($date, 14);
 
-var_dump($isEmpty);
+var_dump($noWhiteSpace);
