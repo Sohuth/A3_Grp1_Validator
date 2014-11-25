@@ -8,7 +8,7 @@
 
 namespace Tests\Sohuth\Validator;
 
-use \Sohuth\Validator\StringValidator;
+use Sohuth\Validator\StringValidator;
 
 /**
  * Class StringValidatorTest
