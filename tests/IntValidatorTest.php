@@ -7,7 +7,7 @@
  */
 namespace Tests\Sohuth\Validator;
 
-use Sohuth\Validator\IntValidator;
+use \Sohuth\Validator\IntValidator;
 
 /**
  * Class IntValidatorTest

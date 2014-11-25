@@ -8,7 +8,7 @@
 
 namespace Tests\Sohuth\Validator;
 
-use Sohuth\Validator\DateTimeValidator;
+use \Sohuth\Validator\DateTimeValidator;
 
 /**
  * Class DateTimeValidatorTest

@@ -8,7 +8,7 @@
 
 namespace Tests\Sohuth\Validator;
 
-use Sohuth\Validator\ArrayValidator;
+use \Sohuth\Validator\ArrayValidator;
 
 /**
  * Class ArrayValidatorTest

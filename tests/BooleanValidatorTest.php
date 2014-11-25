@@ -8,7 +8,7 @@
 
 namespace Tests\Sohuth\Validator;
 
-use Sohuth\Validator\BooleanValidator;
+use \Sohuth\Validator\BooleanValidator;
 
 /**
  * Class BooleanValidatorTest
