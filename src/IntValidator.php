@@ -8,7 +8,7 @@
 namespace Sohuth\Validator;
 /**
  * Class IntValidator
- * @package Validator\Int
+ * @package Sohuth\Validator
  */
 class IntValidator
 {

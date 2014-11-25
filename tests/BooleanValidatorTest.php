@@ -12,7 +12,7 @@ use Sohuth\Validator\BooleanValidator;
 
 /**
  * Class BooleanValidatorTest
- * @package Tests\Validator\BooleanV
+ * @package Tests\Sohuth\Validator
  */
 class BooleanValidatorTest extends \PHPUnit_Framework_TestCase
 {

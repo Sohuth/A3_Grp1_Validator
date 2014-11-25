@@ -8,7 +8,7 @@
 namespace Sohuth\Validator;
 /**
  * Class BooleanValidator
- * @package Validator\Boolean
+ * @package Sohuth\Validator
  */
 class BooleanValidator
 {

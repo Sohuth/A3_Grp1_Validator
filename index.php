@@ -8,40 +8,40 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-$equal = \Validator\IntV\IntValidator::equal(10, 10);
-$superior = \Validator\IntV\IntValidator::superior(10, 5);
-$inferior = \Validator\IntV\IntValidator::inferior(5, 10);
-$between = \Validator\IntV\IntValidator::between(5, 0, 10);
-$negative = \Validator\IntV\IntValidator::negative(-5);
-$positive = \Validator\IntV\IntValidator::positive(5);
+$equal = \Sohuth\Validator\IntValidator::equal(10, 10);
+$superior = \Sohuth\Validator\IntValidator::superior(10, 5);
+$inferior = \Sohuth\Validator\IntValidator::inferior(5, 10);
+$between = \Sohuth\Validator\IntValidator::between(5, 0, 10);
+$negative = \Sohuth\Validator\IntValidator::negative(-5);
+$positive = \Sohuth\Validator\IntValidator::positive(5);
 
 $string = 'izisevran270';
 $stringSpace = ' spaceandshit ';
-$lengthEqual = \Validator\StringV\StringValidator::lengthEqual($string, 5);
-$lengthInferior = \Validator\StringV\StringValidator::lengthInferior($string, 6);
-$lengthSuperior = \Validator\StringV\StringValidator::lengthSuperior($string, 4);
-$lengthBetween = \Validator\StringV\StringValidator::lengthBetween($string, 4, 6);
-$noWhiteSpaceBeginningEnd = \Validator\StringV\StringValidator::noWhiteSpaceBeginningEnd($stringSpace);
-$noWhiteSpace = \Validator\StringV\StringValidator::noWhiteSpace($stringSpace);
+$lengthEqual = \Sohuth\Validator\StringValidator::lengthEqual($string, 5);
+$lengthInferior = \Sohuth\Validator\StringValidator::lengthInferior($string, 6);
+$lengthSuperior = \Sohuth\Validator\StringValidator::lengthSuperior($string, 4);
+$lengthBetween = \Sohuth\Validator\StringValidator::lengthBetween($string, 4, 6);
+$noWhiteSpaceBeginningEnd = \Sohuth\Validator\StringValidator::noWhiteSpaceBeginningEnd($stringSpace);
+$noWhiteSpace = \Sohuth\Validator\StringValidator::noWhiteSpace($stringSpace);
 
-$isTrue = \Validator\BooleanV\BooleanValidator::isTrue(true);
-$isFalse = \Validator\BooleanV\BooleanValidator::isFalse(false);
+$isTrue = \Sohuth\Validator\BooleanValidator::isTrue(true);
+$isFalse = \Sohuth\Validator\BooleanValidator::isFalse(false);
 
 $array = array('SEVRAN' => '270');
-$isEmpty = \Validator\ArrayV\ArrayValidator::isEmpty($array);
-$numberElementsEquals = \Validator\ArrayV\ArrayValidator::arrayComparator($array, \Validator\ArrayV\ArrayValidator::LENGTH_EQUAL, 5);
-$numberElementsSuperior = \Validator\ArrayV\ArrayValidator::arrayComparator($array, \Validator\ArrayV\ArrayValidator::LENGTH_SUPERIOR, 5);
-$numberElementsSuperiorOrEqual = \Validator\ArrayV\ArrayValidator::arrayComparator($array, \Validator\ArrayV\ArrayValidator::LENGTH_SUPERIOR_OR_EQUAL, 5);
-$numberElementsInferior = \Validator\ArrayV\ArrayValidator::arrayComparator($array, \Validator\ArrayV\ArrayValidator::LENGTH_INFERIOR, 5);
-$numberElementsInferiorOrEqual = \Validator\ArrayV\ArrayValidator::arrayComparator($array, \Validator\ArrayV\ArrayValidator::LENGTH_INFERIOR_OR_EQUAL, 5);
-$numberElementsBetween = \Validator\ArrayV\ArrayValidator::numberElementsBetween($array, 5, 10);
-$keyExists = \Validator\ArrayV\ArrayValidator::keyExists($array, 'test');
-$valueExists = \Validator\ArrayV\ArrayValidator::valueExists($array, '270');
+$isEmpty = \Sohuth\Validator\ArrayValidator::isEmpty($array);
+$numberElementsEquals = \Sohuth\Validator\ArrayValidator::arrayComparator($array, \Sohuth\Validator\ArrayValidator::LENGTH_EQUAL, 5);
+$numberElementsSuperior = \Sohuth\Validator\ArrayValidator::arrayComparator($array, \Sohuth\Validator\ArrayValidator::LENGTH_SUPERIOR, 5);
+$numberElementsSuperiorOrEqual = \Sohuth\Validator\ArrayValidator::arrayComparator($array, \Sohuth\Validator\ArrayValidator::LENGTH_SUPERIOR_OR_EQUAL, 5);
+$numberElementsInferior = \Sohuth\Validator\ArrayValidator::arrayComparator($array, \Sohuth\Validator\ArrayValidator::LENGTH_INFERIOR, 5);
+$numberElementsInferiorOrEqual = \Sohuth\Validator\ArrayValidator::arrayComparator($array, \Sohuth\Validator\ArrayValidator::LENGTH_INFERIOR_OR_EQUAL, 5);
+$numberElementsBetween = \Sohuth\Validator\ArrayValidator::numberElementsBetween($array, 5, 10);
+$keyExists = \Sohuth\Validator\ArrayValidator::keyExists($array, 'test');
+$valueExists = \Sohuth\Validator\ArrayValidator::valueExists($array, '270');
 
 $date = new DateTime('08/07/1994 00:00:00');
-$isMajor = \Validator\DateTimeV\DateTimeValidator::isMajor($date);
-$isYear = \Validator\DateTimeV\DateTimeValidator::isYear($date, 14);
-$isMonth = \Validator\DateTimeV\DateTimeValidator::isMonth($date, 7);
-$isDay = \Validator\DateTimeV\DateTimeValidator::isDay($date, 8);
+$isMajor = \Sohuth\Validator\DateTimeValidator::isMajor($date);
+$isYear = \Sohuth\Validator\DateTimeValidator::isYear($date, 14);
+$isMonth = \Sohuth\Validator\DateTimeValidator::isMonth($date, 7);
+$isDay = \Sohuth\Validator\DateTimeValidator::isDay($date, 8);
 
 var_dump($valueExists);

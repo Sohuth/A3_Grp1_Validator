@@ -8,7 +8,7 @@
 namespace Sohuth\Validator;
 /**
  * Class ArrayValidator
- * @package Validator\Array
+ * @package Sohuth\Validator
  */
 class ArrayValidator
 {

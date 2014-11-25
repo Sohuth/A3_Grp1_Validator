@@ -12,7 +12,7 @@ use Sohuth\Validator\ArrayValidator;
 
 /**
  * Class ArrayValidatorTest
- * @package Tests\Validator\ArrayV
+ * @package Tests\Sohuth\Validator
  */
 class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
 {

@@ -8,7 +8,7 @@
 namespace Sohuth\Validator;
 /**
  * Class StringValidator
- * @package Validator\StringV
+ * @package Sohuth\Validator
  */
 class StringValidator
 {

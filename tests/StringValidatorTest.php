@@ -12,7 +12,7 @@ use Sohuth\Validator\StringValidator;
 
 /**
  * Class StringValidatorTest
- * @package Tests\Validator\StringV
+ * @package Tests\Sohuth\Validator
  */
 class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {

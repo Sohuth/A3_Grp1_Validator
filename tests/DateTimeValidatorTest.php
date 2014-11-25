@@ -12,7 +12,7 @@ use Sohuth\Validator\DateTimeValidator;
 
 /**
  * Class DateTimeValidatorTest
- * @package Tests\Validator\DateTimeV
+ * @package Tests\Sohuth\Validator
  */
 class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
 {

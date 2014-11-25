@@ -11,7 +11,7 @@ use Sohuth\Validator\IntValidator;
 
 /**
  * Class IntValidatorTest
- * @package Tests\Validator\IntV\IntValidator
+ * @package Tests\Sohuth\Validator
  */
 class IntValidatorTest extends \PHPUnit_Framework_TestCase
 {
