@@ -1,6 +1,10 @@
 # SohuthValidator
 
-[BADGES COMES HERE]
+[![Build Status](https://travis-ci.org/Sohuth/A3_Grp1_Validator.svg?branch=master)](https://travis-ci.org/Sohuth/A3_Grp1_Validator)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/Sohuth/A3_Grp1_Validator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Sohuth/A3_Grp1_Validator/?branch=master)
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Sohuth/A3_Grp1_Validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Sohuth/A3_Grp1_Validator/?branch=master)
 
 This library is a work in progress.
 
