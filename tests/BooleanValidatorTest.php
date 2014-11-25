@@ -6,7 +6,7 @@
  * Time: 00:43
  */
 
-namespace Tests\Sohuth\Validator;;
+namespace Tests\Sohuth\Validator;
 
 use Sohuth\Validator\BooleanValidator;
 

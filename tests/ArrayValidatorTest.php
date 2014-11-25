@@ -6,7 +6,7 @@
  * Time: 00:45
  */
 
-namespace Tests\Sohuth\Validator;;
+namespace Tests\Sohuth\Validator;
 
 use Sohuth\Validator\ArrayValidator;
 

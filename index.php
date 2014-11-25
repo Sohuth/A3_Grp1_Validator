@@ -40,7 +40,7 @@ $valueExists = \Sohuth\Validator\ArrayValidator::valueExists($array, '270');
 
 $date = new DateTime('08/07/1994 00:00:00');
 $isMajor = \Sohuth\Validator\DateTimeValidator::isMajor($date);
-$isYear = \Sohuth\Validator\DateTimeValidator::isYear($date, 14);
+$isYear = \Sohuth\Validator\DateTimeValidator::isYear($date, 94);
 $isMonth = \Sohuth\Validator\DateTimeValidator::isMonth($date, 7);
 $isDay = \Sohuth\Validator\DateTimeValidator::isDay($date, 8);
 
