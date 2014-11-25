@@ -5,9 +5,9 @@
  * Date: 24/11/2014
  * Time: 11:01
  */
-namespace Tests\Validator\IntV;
+namespace Tests\Sohuth\Validator;
 
-use \Validator\IntV\IntValidator;
+use \Sohuth\Validator\IntValidator;
 
 /**
  * Class IntValidatorTest

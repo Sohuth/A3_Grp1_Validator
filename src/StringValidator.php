@@ -5,7 +5,7 @@
  * Date: 23/11/2014
  * Time: 17:11
  */
-namespace Validator\StringV;
+namespace Sohuth\Validator;
 /**
  * Class StringValidator
  * @package Validator\StringV
@@ -20,37 +20,27 @@ class StringValidator
      *
      * @throws \Exception
      */
-    public static function lengthEqual($string, $length){
-        if(!is_string($string) || !is_int($length)){
+    public static function lengthEqual($string, $length) {
+        if (is_string($string) === false || is_int($length) === false)
             throw new \Exception('This parameter needs to be a string or int');
-        }
-        if(mb_strlen($string) == $length){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $lengthEqual = mb_strlen($string) === $length;
+        return $lengthEqual;
     }
 
     /**
      * @param string $string
-     * @param int $lengthMin
-     * @param int $lengthMax
+     * @param int $a
+     * @param int $b
      *
      * @return bool
      *
      * @throws \Exception
      */
-    public static function lengthBetween($string, $lengthMin, $lengthMax){
-        if(!is_string($string) || !is_int($lengthMin) || !is_int($lengthMax)){
+    public static function lengthBetween($string, $a, $b) {
+        if (is_string($string) === false || is_int($a) === false || is_int($b) === false)
             throw new \Exception('This parameter needs to be a string or int');
-        }
-        if(mb_strlen($string) >= $lengthMin && mb_strlen($string) <= $lengthMax){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $lengthBetween = mb_strlen($string) >= $a && mb_strlen($string) <= $b;
+        return $lengthBetween;
     }
 
     /**
@@ -61,16 +51,11 @@ class StringValidator
      *
      * @throws \Exception
      */
-    public static function lengthSuperior($string, $length){
-        if(!is_string($string) || !is_int($length)){
+    public static function lengthSuperior($string, $length) {
+        if (is_string($string) === false || is_int($length) === false)
             throw new \Exception('This parameter needs to be a string or int');
-        }
-        if(mb_strlen($string) >= $length){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $lengthSuperior = mb_strlen($string) >= $length;
+        return $lengthSuperior;
     }
 
     /**
@@ -81,16 +66,11 @@ class StringValidator
      *
      * @throws \Exception
      */
-    public static function lengthInferior($string, $length){
-        if(!is_string($string) || !is_int($length)){
-            throw new \Exception('This parameter needs to be a string');
-        }
-        if(mb_strlen($string) <= $length){
-            return true;
-        }
-        else{
-            return false;
-        }
+    public static function lengthInferior($string, $length) {
+        if (is_string($string) === false || is_int($length) === false)
+            throw new \Exception('This parameter needs to be a string or int');
+        $lengthInferior = mb_strlen($string) <= $length;
+        return $lengthInferior;
     }
 
     /**
@@ -100,19 +80,12 @@ class StringValidator
      *
      * @throws \Exception
      */
-    public static function noWhiteSpaceBeginningEnd($string){
-        if(!is_string($string)){
+    public static function noWhiteSpaceBeginningEnd($string) {
+        if (is_string($string) === false)
             throw new \Exception('This parameter needs to be a string');
-        }
-        $stringNoSpace = trim($string);
-        if(preg_match("/^\s/",$stringNoSpace) == 0 && preg_match("/^\s/",$stringNoSpace) == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $noWhiteSpaceBeginningEnd = preg_match('/^\s/', $string) === 0 && preg_match('/\s$/', $string) === 0;
+        return $noWhiteSpaceBeginningEnd;
     }
-
     /**
      * @param string $string
      *
@@ -120,16 +93,10 @@ class StringValidator
      *
      * @throws \Exception
      */
-    public static function noWhiteSpace($string){
-        if(!is_string($string)){
+    public static function noWhiteSpace($string) {
+        if (is_string($string) === false)
             throw new \Exception('This parameter needs to be a string');
-        }
-        $stringNoSpace = explode(" ",$string);
-        if(preg_match("/^\s/",implode($stringNoSpace)) == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $noWhiteSpace = preg_match('/\s/', $string) === 0;
+        return $noWhiteSpace;
     }
 }

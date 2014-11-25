@@ -5,7 +5,7 @@
  * Date: 23/11/2014
  * Time: 17:11
  */
-namespace Validator\DateTimeV;
+namespace Sohuth\Validator;
 /**
  * Class DateTimeValidator
  * @package Validator\DateTime
@@ -18,37 +18,26 @@ class DateTimeValidator
      * @return bool
      *
      */
-    public static function isMajor(\DateTime $date)
-    {
+    public static function isMajor(\DateTime $date){
         $dateNow = new \DateTime();
-        $a = $date->diff($dateNow);
-        if($a->y >= 18){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $a = $date->diff($dateNow)->y;
+        $isMajor = $a >= 18;
+        return $isMajor;
     }
 
     /**
-     * @param $year
+     * @param int $year
      * @param \DateTime $date
      *
      * @return bool
      *
      * @throws \Exception
      */
-    public static function isYear(\DateTime $date, $year)
-    {
-        if(!is_int($year)){
+    public static function isYear(\DateTime $date, $year){
+        if (is_int($year) === false)
             throw new \Exception('This parameter needs to be int');
-        }
-        if($date->format('Y') == $year){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $dateYear = $date->format('Y') == $year;
+        return $dateYear;
     }
     /**
      * @param \Datetime $date
@@ -60,12 +49,10 @@ class DateTimeValidator
      */
     public static function isMonth(\Datetime $date, $month)
     {
-        if(!is_int($month))
-            throw new \Exception('The second parameter need to be a integer');
-        if((int) $date->format('m') === $month)
-            return true;
-        else
-            return false;
+        if (is_int($month) === false)
+            throw new \Exception('This parameter needs to be int');
+        $dateMonth = $date->format('m') == $month;
+        return $dateMonth;
     }
     /**
      * @param \Datetime $date
@@ -75,13 +62,10 @@ class DateTimeValidator
      *
      * @throws \Exception
      */
-    public static function isDay(\Datetime $date, $day)
-    {
-        if(!is_int($day))
-            throw new \Exception('The second parameter need to be a integer');
-        if( (int) $date->format('d') === $day)
-            return true;
-        else
-            return false;
+    public static function isDay(\Datetime $date, $day){
+        if (is_int($day) === false)
+            throw new \Exception('This parameter needs to be int');
+        $dateDay = $date->format('d') == $day;
+        return $dateDay;
     }
 }

@@ -6,9 +6,9 @@
  * Time: 00:46
  */
 
-namespace Tests\Validator\DateTimeV;
+namespace Tests\Sohuth\Validator;
 
-use \Validator\DateTimeV\DateTimeValidator;
+use \Sohuth\Validator\DateTimeValidator;
 
 /**
  * Class DateTimeValidatorTest

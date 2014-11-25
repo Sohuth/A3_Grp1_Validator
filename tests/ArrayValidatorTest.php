@@ -6,9 +6,9 @@
  * Time: 00:45
  */
 
-namespace Tests\Validator\ArrayV;
+namespace Tests\Sohuth\Validator;;
 
-use \Validator\ArrayV\ArrayValidator;
+use \Sohuth\Validator\ArrayValidator;
 
 /**
  * Class ArrayValidatorTest
@@ -21,7 +21,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testArrayIsEmpty()
+    public function testIsEmpty()
     {
         $array = array();
         $bool = ArrayValidator::isEmpty($array);
@@ -33,7 +33,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testArrayIsNotEmpty()
+    public function testIsNotEmpty()
     {
         $array = array('key' => 'value');
         $bool = ArrayValidator::isEmpty($array);

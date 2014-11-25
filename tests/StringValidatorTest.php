@@ -6,9 +6,9 @@
  * Time: 00:41
  */
 
-namespace Tests\Validator\StringV;
+namespace Tests\Sohuth\Validator;
 
-use \Validator\StringV\StringValidator;
+use \Sohuth\Validator\StringValidator;
 
 /**
  * Class StringValidatorTest

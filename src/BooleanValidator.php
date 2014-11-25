@@ -5,7 +5,7 @@
  * Date: 23/11/2014
  * Time: 17:11
  */
-namespace Validator\BooleanV;
+namespace Sohuth\Validator;
 /**
  * Class BooleanValidator
  * @package Validator\Boolean
@@ -19,17 +19,10 @@ class BooleanValidator
      *
      * @throws \Exception
      */
-    public static function isTrue($boolean)
-    {
-        if(!is_bool($boolean)){
+    public static function isTrue($boolean) {
+        if (is_bool($boolean) === false)
             throw new \Exception('This parameter needs to be a boolean');
-        }
-        if($boolean){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return $boolean;
     }
 
     /**
@@ -39,16 +32,9 @@ class BooleanValidator
      *
      * @throws \Exception
      */
-    public static function isFalse($boolean)
-    {
-        if(!is_bool($boolean)){
+    public static function isFalse($boolean) {
+        if (is_bool($boolean) === false)
             throw new \Exception('This parameter needs to be a boolean');
-        }
-        if(!$boolean){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return !$boolean;
     }
 }

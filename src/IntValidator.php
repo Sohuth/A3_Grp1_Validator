@@ -5,7 +5,7 @@
  * Date: 23/11/2014
  * Time: 17:10
  */
-namespace Validator\IntV;
+namespace Sohuth\Validator;
 /**
  * Class IntValidator
  * @package Validator\Int
@@ -20,16 +20,11 @@ class IntValidator
      *
      * @throws \Exception
      */
-    public static function equal($integer, $equal){
-        if(!is_int($integer) || !is_int($equal)){
+    public static function equal($integer, $equal) {
+        if (is_int($integer) === false || is_int($equal) === false)
             throw new \Exception('These parameters need to be int');
-        }
-        if($integer == $equal){
-            return false;
-        }
-        else{
-            return true;
-        }
+        $isequal = $integer === $equal;
+        return $isequal;
     }
 
     /**
@@ -41,16 +36,11 @@ class IntValidator
      *
      * @return bool
      */
-    public static function between($integer, $a, $b){
-        if(!is_int($integer) || !is_int($a) || !is_int($b)){
+    public static function between($integer, $a, $b) {
+        if (is_int($integer) === false || is_int($a) === false || is_int($b) === false)
             throw new \Exception('These parameters need to be int');
-        }
-        if($integer >= $b && $integer <= $b){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $between = $integer >= $a && $integer <= $b;
+        return $between;
     }
 
     /**
@@ -61,16 +51,11 @@ class IntValidator
      *
      * @throws \Exception
      */
-    public static function superior($integer, $a){
-        if(!is_int($integer) || !is_int($a)){
+    public static function superior($integer, $a) {
+        if (is_int($integer) === false || is_int($a) === false)
             throw new \Exception('These parameters need to be int');
-        }
-        if($integer >= $a){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $superior = $integer >= $a;
+        return $superior;
     }
 
     /**
@@ -81,16 +66,11 @@ class IntValidator
      *
      * @throws \Exception
      */
-    public static function inferior($integer, $a){
-        if(!is_int($integer) || !is_int($a)){
+    public static function inferior($integer, $a) {
+        if (is_int($integer) === false || is_int($a) === false)
             throw new \Exception('These parameters need to be int');
-        }
-        if($integer <= $a){
-            return true;
-        }
-        else{
-            return false;
-        }
+        $inferior = $integer <= $a;
+        return $inferior;
     }
 
     /**
@@ -100,16 +80,11 @@ class IntValidator
      *
      * @throws \Exception
      */
-    public static function negative($integer){
-        if(!is_int($integer)){
-            throw new \Exception('This parameter needs to be int');
-        }
-        if($integer <= 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+    public static function negative($integer) {
+        if (is_int($integer) === false)
+            throw new \Exception('These parameters need to be int');
+        $negative = $integer <= 0;
+        return $negative;
     }
 
     /**
@@ -119,15 +94,10 @@ class IntValidator
      *
      * @throws \Exception
      */
-    public static function positive($integer){
-        if(!is_int($integer)){
-            throw new \Exception('This parameter needs to be int');
-        }
-        if($integer >= 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+    public static function positive($integer) {
+        if (is_int($integer) === false)
+            throw new \Exception('These parameters need to be int');
+        $positive = $integer >= 0;
+        return $positive;
     }
 }

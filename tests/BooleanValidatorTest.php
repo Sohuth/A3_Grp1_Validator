@@ -6,9 +6,9 @@
  * Time: 00:43
  */
 
-namespace Tests\Validator\BooleanV;
+namespace Tests\Sohuth\Validator;;
 
-use \Validator\BooleanV\BooleanValidator;
+use \Sohuth\Validator\BooleanValidator;
 
 /**
  * Class BooleanValidatorTest
