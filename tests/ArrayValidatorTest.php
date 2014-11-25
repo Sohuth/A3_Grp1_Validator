@@ -35,66 +35,55 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testArrayIsNotEmpty()
     {
-        $array = array('key' => 'chat');
+        $array = array('key' => 'value');
         $bool = ArrayValidator::isEmpty($array);
         $this->assertFalse($bool);
     }
 
     /**
-     * Test if the arrayComparator method throw exception if invalid parameter
-     *
-     *@expectedException \Exception
-     */
-    public function testException()
-    {
-        $array = array('Dogs' => 3);
-        ArrayValidator::arrayComparator($array, 'sd', 1);
-    }
-
-    /**
-     * Test if the array is equal to a value
+     * Test if the array is equal to a number
      *
      * @throws \Exception
      */
     public function testArrayIsEqualTo()
     {
-        $array = array('Dogs' => 3);
+        $array = array('Test' => 1);
         $bool = ArrayValidator::arrayComparator($array, ArrayValidator::LENGTH_EQUAL, 1);
         $this->assertTrue($bool);
     }
 
     /**
-     * Test if the array is not equal to a value
+     * Test if the array is not equal to a number
      *
      * @throws \Exception
      */
     public function testArrayIsNotEqualTo()
     {
-        $array = array('Dogs' => 3);
+        $array = array('Test' => 1);
         $bool = ArrayValidator::arrayComparator($array, ArrayValidator::LENGTH_EQUAL, 3);
         $this->assertFalse($bool);
     }
 
     /**
-     * Test if the is inferior to a value
+     * Test if the array is inferior to a number
      *
      * @throws \Exception
      */
     public function testArrayIsInferior()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::arrayComparator($array, ArrayValidator::LENGTH_INFERIOR, 10);
         $this->assertTrue($bool);
     }
 
     /**
-     * Test if the is superior to a value
+     * Test if the array is superior to a number
      *
      * @throws \Exception
      */
     public function testArrayIsSuperior()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::arrayComparator($array, ArrayValidator::LENGTH_SUPERIOR, 1);
         $this->assertTrue($bool);
     }
@@ -106,7 +95,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testArrayIsInferiorOrEqual()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::arrayComparator($array, ArrayValidator::LENGTH_INFERIOR_OR_EQUAL, 2);
         $this->assertTrue($bool);
     }
@@ -118,80 +107,80 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testArrayIsSuperiorOrEqual()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::arrayComparator($array, ArrayValidator::LENGTH_SUPERIOR_OR_EQUAL, 2);
         $this->assertTrue($bool);
     }
+
     /**
      * Test if the array length is between two integer
      *
      * @throws \Exception
      */
-
     public function testIsBetween()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::numberElementsBetween($array, 1, 2);
         $this->assertTrue($bool);
     }
+
     /**
      * Test if the array length is not between two integer
      *
      * @throws \Exception
      */
-
     public function testIsNotBetween()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::numberElementsBetween($array, 3, 5);
         $this->assertFalse($bool);
     }
+
     /**
      * Test if the value exists in a array
      *
      * @throws \Exception
      */
-
     public function testValueInArray()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::valueExists($array, '3');
         $this->assertTrue($bool);
     }
+
     /**
      * Test if the value exists in a array
      *
      * @throws \Exception
      */
-
     public function testNotValueInArray()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::valueExists($array, '4');
         $this->assertFalse($bool);
     }
+
     /**
      * Test if the key exists in a array
      *
      * @throws \Exception
      */
-
     public function testKeyInArray()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
-        $bool = ArrayValidator::keyExists($array, 'Dogs');
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
+        $bool = ArrayValidator::keyExists($array, 'SEVRAN');
         $this->assertTrue($bool);
     }
+
     /**
      * Test if the key exists in a array
      *
      * @throws \Exception
      */
-
     public function testNotKeyInArray()
     {
-        $array = array('Dogs' => 3, 'Cats' => 10);
-        $bool = ArrayValidator::keyExists($array, 'Ca');
+        $array = array('SEVRAN' => 5, 'OKLM' => 10);
+        $bool = ArrayValidator::keyExists($array, '92IZI');
         $this->assertFalse($bool);
     }
 }

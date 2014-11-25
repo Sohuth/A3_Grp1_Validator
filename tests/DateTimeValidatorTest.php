@@ -25,7 +25,7 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/1993 00:00:00');
+        $date = new \DateTime('08/07/1994 00:00:00');
         $bool = DateTimeValidator::isMajor($date);
         $this->assertTrue($bool);
     }
@@ -39,7 +39,7 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2000 00:00:00');
+        $date = new \DateTime('01/01/2014 00:00:00');
         $bool = DateTimeValidator::isMajor($date);
         $this->assertFalse($bool);
     }
@@ -53,8 +53,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2010 00:00:00');
-        $bool = DateTimeValidator::isYear($date, 2010);
+        $date = new \DateTime('01/01/2014 00:00:00');
+        $bool = DateTimeValidator::isYear($date, 2014);
         $this->assertTrue($bool);
     }
 
@@ -67,8 +67,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2010 00:00:00');
-        $bool = DateTimeValidator::isYear($date, 2012);
+        $date = new \DateTime('01/01/2014 00:00:00');
+        $bool = DateTimeValidator::isYear($date, 2015);
         $this->assertFalse($bool);
     }
 
@@ -81,8 +81,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2010 00:00:00');
-        $bool = DateTimeValidator::isMonth($date, 12);
+        $date = new \DateTime('01/01/2014 00:00:00');
+        $bool = DateTimeValidator::isMonth($date, 01);
         $this->assertTrue($bool);
     }
 
@@ -95,8 +95,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2010 00:00:00');
-        $bool = DateTimeValidator::isMonth($date, 11);
+        $date = new \DateTime('01/01/2014 00:00:00');
+        $bool = DateTimeValidator::isMonth($date, 12);
         $this->assertFalse($bool);
     }
 
@@ -109,8 +109,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2010 00:00:00');
-        $bool = DateTimeValidator::isDay($date, 14);
+        $date = new \DateTime('01/01/2014 00:00:00');
+        $bool = DateTimeValidator::isDay($date, 01);
         $this->assertTrue($bool);
     }
 
@@ -123,8 +123,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $date = new \DateTime('12/14/2010 00:00:00');
-        $bool = DateTimeValidator::isDay($date, 11);
+        $date = new \DateTime('01/01/2014 00:00:00');
+        $bool = DateTimeValidator::isDay($date, 02);
         $this->assertFalse($bool);
     }
 }

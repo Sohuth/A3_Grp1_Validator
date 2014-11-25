@@ -20,11 +20,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsEqual()
-    {
-        $int = mt_rand(0, 10);
-        $bool = IntValidator::equal($int, $int);
-        $this->assertTrue($bool);
+    public function testIsEqual(){
+        $int = mt_rand(1,10);
+        $boolean = IntValidator::equal($int,$int);
+        $this->assertTrue($boolean);
     }
 
     /**
@@ -32,11 +31,11 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNotEqual()
-    {
-        $int = mt_rand(0, 10);
-        $bool = IntValidator::equal($int, $int + 2);
-        $this->assertFalse($bool);
+    public function testIsNotEqual(){
+        $int = mt_rand(1,10);
+        $integer = mt_rand(21,30);
+        $boolean = IntValidator::equal($int,$integer);
+        $this->assertFalse($boolean);
     }
 
     /**
@@ -44,12 +43,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsSuperior()
-    {
-        $high = mt_rand(10, 20);
-        $low = mt_rand(1, 9);
-        $bool = IntValidator::superior($high, $low);
-        $this->assertTrue($bool);
+    public function testIsSuperior(){
+        $int = mt_rand(5,10);
+        $boolean = IntValidator::superior($int, 1);
+        $this->assertTrue($boolean);
     }
 
     /**
@@ -57,12 +54,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNotSuperior()
-    {
-        $high = mt_rand(10, 20);
-        $low = mt_rand(20, 30);
-        $bool = IntValidator::superior($high, $low);
-        $this->assertFalse($bool);
+    public function testIsNotSuperior(){
+        $int = mt_rand(5,10);
+        $boolean = IntValidator::superior($int, 11);
+        $this->assertFalse($boolean);
     }
 
     /**
@@ -70,12 +65,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsInferior()
-    {
-        $high = mt_rand(10, 20);
-        $low = mt_rand(1, 9);
-        $bool = IntValidator::inferior($low, $high);
-        $this->assertTrue($bool);
+    public function testIsInferior(){
+        $int = mt_rand(5,10);
+        $boolean = IntValidator::inferior($int, 11);
+        $this->assertTrue($boolean);
     }
 
     /**
@@ -83,12 +76,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNotInferior()
-    {
-        $high = mt_rand(10, 20);
-        $low = mt_rand(25, 30);
-        $bool = IntValidator::inferior($low, $high);
-        $this->assertFalse($bool);
+    public function testIsNotInferior(){
+        $int = mt_rand(5,10);
+        $boolean = IntValidator::inferior($int, 1);
+        $this->assertFalse($boolean);
     }
 
     /**
@@ -96,11 +87,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsBetween()
-    {
-        $int = mt_rand(10, 20);
-        $bool = IntValidator::between($int, 1, 30);
-        $this->assertTrue($bool);
+    public function testIsBetween(){
+        $int = mt_rand(5,15);
+        $boolean = IntValidator::between($int,1,20);
+        $this->assertTrue($boolean);
     }
 
     /**
@@ -108,23 +98,22 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNotBetween()
-    {
-        $int = mt_rand(10, 20);
-        $bool = IntValidator::between($int, 25, 30);
-        $this->assertFalse($bool);
+    public function testIsNotBetween(){
+        $int = mt_rand(5,15);
+        $boolean = IntValidator::between($int,16,20);
+        $this->assertFalse($boolean);
     }
+
 
     /**
      * Test if the generated integer is negative
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNegative()
-    {
-        $int = mt_rand(-20, -10);
-        $bool = IntValidator::negative($int);
-        $this->assertEquals($bool, true);
+    public function testIsNegative(){
+        $int = mt_rand(-10,-5);
+        $boolean = IntValidator::negative($int);
+        $this->assertTrue($boolean);
     }
 
     /**
@@ -132,11 +121,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNotNegative()
-    {
-        $int = mt_rand(20, 30);
-        $bool = IntValidator::negative($int);
-        $this->assertFalse($bool);
+    public function testIsNotNegative(){
+        $int = mt_rand(5,10);
+        $boolean = IntValidator::negative($int);
+        $this->assertFalse($boolean);
     }
 
     /**
@@ -144,11 +132,10 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsPositive()
-    {
-        $int = mt_rand(10, 20);
-        $bool = IntValidator::positive($int);
-        $this->assertEquals($bool, true);
+    public function testIsPositive(){
+        $int = mt_rand(5,10);
+        $boolean = IntValidator::positive($int);
+        $this->assertTrue($boolean);
     }
 
     /**
@@ -156,10 +143,9 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateLengthIsNotPositive()
-    {
-        $int = mt_rand(-10, -2);
-        $bool = IntValidator::positive($int);
-        $this->assertFalse($bool);
+    public function testIsNotPositive(){
+        $int = mt_rand(-10,-5);
+        $boolean = IntValidator::positive($int);
+        $this->assertFalse($boolean);
     }
 }
