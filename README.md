@@ -15,6 +15,7 @@ This library is a work in progress.
 git clone ...
 
 ###Install dependencies
+In Git Bash or any CMD:
 
 composer update --prefer-dist -o
 
