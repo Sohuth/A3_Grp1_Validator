@@ -17,7 +17,7 @@ use \Validator\StringV\StringValidator;
 class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test if the generated string is equal to a specific length
+     * Test if the generated string is equal to length
      *
      * @throws \Exception
      */
@@ -30,7 +30,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is not equal to a specific length
+     * Test if the generated string is not equal to length
      *
      * @throws \Exception
      */
@@ -43,7 +43,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is superior to a specific int
+     * Test if the generated string is superior to int
      *
      * @throws \Exception
      */
@@ -55,7 +55,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is not superior to a specific int
+     * Test if the generated string is not superior to int
      *
      * @throws \Exception
      */
@@ -67,7 +67,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is inferior to a specific int
+     * Test if the generated string is inferior to int
      *
      * @throws \Exception
      */
@@ -80,7 +80,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is not inferior to a specific int
+     * Test if the generated string is not inferior to int
      *
      * @throws \Exception
      */
@@ -93,7 +93,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is between two specific int
+     * Test if the generated string is between two int
      *
      * @throws \Exception
      */
@@ -106,7 +106,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string is not between two specific int
+     * Test if the generated string is not between two int
      *
      * @throws \Exception
      */
@@ -119,11 +119,11 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string has white space ar the start or the end
+     * Test if the generated string has no white space ar the start or the end
      *
      * @throws \Exception
      */
-    public function testGenerateStrignHasWhiteSpaceStartEnd()
+    public function testGenerateStringNoWhiteSpaceBeginningEnd()
     {
         $string = " azertyuiopqsdfghjklmwxcvbn ";
         $bool = StringValidator::noWhiteSpaceBeginningEnd($string);
@@ -131,11 +131,11 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the generated string has no white space ar the start or the end
+     * Test if the generated string has white space ar the start or the end
      *
      * @throws \Exception
      */
-    public function testGenerateStringHasNoWhiteSpaceStartEnd()
+    public function testGenerateStringWhiteSpaceBeginningEnd()
     {
         $string = "azertyuiopqsdfghjklmwxcvbn";
         $bool = StringValidator::noWhiteSpaceBeginningEnd($string);
@@ -147,7 +147,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateStringHasWhiteSpace()
+    public function testGenerateStringNoWhiteSpace()
     {
         $string = "azertyuiop qsdfghjklm wxcvbn";
         $bool = StringValidator::noWhiteSpace($string);
@@ -159,7 +159,7 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testGenerateStringHasNoWhiteSpace()
+    public function testGenerateStringWhiteSpace()
     {
         $string = "azertyuiopqsdfghjklmwxcvbn";
         $bool = StringValidator::noWhiteSpace($string);

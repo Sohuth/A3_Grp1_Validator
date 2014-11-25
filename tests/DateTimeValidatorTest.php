@@ -17,7 +17,7 @@ use \Validator\DateTimeV\DateTimeValidator;
 class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test if the date is major (over 18 years)
+     * Test if the date is major
      *
      * @throws \Exception
      */
@@ -25,13 +25,13 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $birthdate = new \DateTime('12/14/1993 00:00:00');
-        $bool = DateTimeValidator::isMajor($birthdate);
+        $date = new \DateTime('12/14/1993 00:00:00');
+        $bool = DateTimeValidator::isMajor($date);
         $this->assertTrue($bool);
     }
 
     /**
-     * Test if the date is not major (over 18 years)
+     * Test if the date is not major
      *
      * @throws \Exception
      */
@@ -39,8 +39,8 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         //if not set, throw error
         date_default_timezone_set('Europe/Paris');
-        $birthdate = new \DateTime('12/14/2000 00:00:00');
-        $bool = DateTimeValidator::isMajor($birthdate);
+        $date = new \DateTime('12/14/2000 00:00:00');
+        $bool = DateTimeValidator::isMajor($date);
         $this->assertFalse($bool);
     }
 
@@ -73,7 +73,7 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the date's year is equal
+     * Test if the date's month is equal
      *
      * @throws \Exception
      */
@@ -87,7 +87,7 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the date's year is not equal
+     * Test if the date's month is not equal
      *
      * @throws \Exception
      */
@@ -101,7 +101,7 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the date's year is equal
+     * Test if the date's day is equal
      *
      * @throws \Exception
      */
@@ -115,7 +115,7 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the date's year is not equal
+     * Test if the date's day is not equal
      *
      * @throws \Exception
      */
