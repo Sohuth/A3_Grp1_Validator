@@ -117,7 +117,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testIsBetween()
+    public function testNumberElementsBetween()
     {
         $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::numberElementsBetween($array, 1, 2);
@@ -129,7 +129,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testIsNotBetween()
+    public function testNumberElementsNotBetween()
     {
         $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::numberElementsBetween($array, 3, 5);
@@ -141,10 +141,10 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testValueInArray()
+    public function testValueExists()
     {
         $array = array('SEVRAN' => 5, 'OKLM' => 10);
-        $bool = ArrayValidator::valueExists($array, '3');
+        $bool = ArrayValidator::valueExists($array, '5');
         $this->assertTrue($bool);
     }
 
@@ -153,7 +153,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testNotValueInArray()
+    public function testValueNotExists()
     {
         $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::valueExists($array, '4');
@@ -165,7 +165,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testKeyInArray()
+    public function testKeyExists()
     {
         $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::keyExists($array, 'SEVRAN');
@@ -177,7 +177,7 @@ class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
      *
      * @throws \Exception
      */
-    public function testNotKeyInArray()
+    public function testKeyNotExists()
     {
         $array = array('SEVRAN' => 5, 'OKLM' => 10);
         $bool = ArrayValidator::keyExists($array, '92IZI');
