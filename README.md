@@ -6,8 +6,6 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Sohuth/A3_Grp1_Validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Sohuth/A3_Grp1_Validator/?branch=master)
 
-This library is a work in progress.
-
 ## Installation
 
 ### Clone repository
@@ -23,9 +21,7 @@ or
 
 composer update
 
-###Use it!
-
-???profit
+###???profit
 
 ## Code Example
 
