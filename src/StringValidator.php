@@ -6,6 +6,7 @@
  * Time: 17:11
  */
 namespace Sohuth\Validator;
+
 /**
  * Class StringValidator
  * @package Sohuth\Validator

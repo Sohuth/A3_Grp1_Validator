@@ -5,6 +5,7 @@
  * Date: 23/11/2014
  * Time: 17:10
  */
+
 namespace Sohuth\Validator;
 /**
  * Class IntValidator

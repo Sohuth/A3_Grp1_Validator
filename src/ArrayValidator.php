@@ -109,7 +109,7 @@ class ArrayValidator
     public static function keyExists($array, $key){
         if (is_array($array) === false || is_string($key) === false)
             throw new \Exception('These parameters need to be an array and key');
-        $arrayKey = array_key_exists($key, $array);
+        $arrayKey = array_key_exists($key, $array) ;
         return $arrayKey;
     }
 
@@ -125,7 +125,7 @@ class ArrayValidator
     public static function valueExists($array, $value){
         if (is_array($array) === false || is_string($value) === false)
             throw new \Exception('These parameters need to be an array and value');
-        $arrayValue = in_array($value, $array);
+        $arrayValue = in_array($value, $array) ;
         return $arrayValue;
     }
 }
