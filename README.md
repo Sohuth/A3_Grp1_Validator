@@ -29,7 +29,7 @@ In the index.php file, enter the values you need to test then do a var_dump(); o
 
 Example:
 
-$valueExists = \Validator\ArrayV\ArrayValidator::valueExists($array, '270');
+$valueExists = \Sohuth\Validator\ArrayValidator::valueExists($array, '270');
 var_dump($valueExists);
 
 It will return : boolean true.
