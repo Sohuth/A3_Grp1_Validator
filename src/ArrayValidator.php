@@ -6,15 +6,16 @@
  * Time: 17:47
  */
 namespace Sohuth\Validator;
+
 /**
  * Class ArrayValidator
  * @package Sohuth\Validator
  */
 class ArrayValidator
 {
-    const LENGTH_EQUAL = 1;
-    const LENGTH_INFERIOR = 2;
-    const LENGTH_SUPERIOR = 3;
+    const LENGTH_EQUAL             = 1;
+    const LENGTH_INFERIOR          = 2;
+    const LENGTH_SUPERIOR          = 3;
     const LENGTH_INFERIOR_OR_EQUAL = 4;
     const LENGTH_SUPERIOR_OR_EQUAL = 5;
 
@@ -41,8 +42,7 @@ class ArrayValidator
      *
      * @throws \Exception
      */
-    public static function arrayComparator($array, $operator, $integer)
-    {
+    public static function arrayComparator($array, $operator, $integer) {
         if (is_array($array) === false || is_int($integer) === false)
             throw new \Exception('Invalid format!');
 
@@ -90,7 +90,7 @@ class ArrayValidator
      *
      * @throws \Exception
      */
-    public static function numberElementsBetween($array,$a, $b){
+    public static function numberElementsBetween($array,$a, $b) {
         if (is_array($array) === false || is_int($a) === false || is_int($b) === false)
             throw new \Exception('These parameters need to be an array and int');
         $arrayBetween = count($array) >= $a && count($array) <= $b;

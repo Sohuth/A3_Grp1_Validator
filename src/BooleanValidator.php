@@ -6,6 +6,7 @@
  * Time: 17:11
  */
 namespace Sohuth\Validator;
+
 /**
  * Class BooleanValidator
  * @package Sohuth\Validator
